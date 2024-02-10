@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    text-align: center;
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100%;
+    width: 25vw;
+    overflow-y: auto;
+    border: 5px solid rgb(216, 210, 210);
+    border-radius: 3px;
+
+}
+
+.sidebar__inner {
+    position: relative;
+    height: 120%;
+}
+
+.sidebar__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.main {
+    width: 75vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: green;
+    color: #fff;
+    padding: 20px;
+    border: 5px solid rgb(0, 83, 0);
+    border-radius: 3px;
+}
+
+.section {
+    padding: 20px 15px;
+    position: relative;
+    background-color: blueviolet;
+    flex-grow: 1;
+    border-right: 5px solid rgb(97, 31, 160);
+    border-radius: 3px;
+    overflow-y: auto;
+}
+
+.section__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    z-index: 0;
+}
+.section__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.element {
+    z-index: 1;
+    width: 300px;
+    padding: 20px 10px;
+    background-color: rgb(255, 217, 0);
+    border: 5px solid rgb(192, 125, 0);
+    border-radius: 3px;
+    color: #000;
+}
+.element:nth-child(2n) {
+    align-self: flex-end;
+}
+.footer {
+    background-color: red;
+    padding: 5px 20px;
+    border: 5px solid rgb(145, 0, 0);
+    border-radius: 3px;
+}
+
+.input {
+    width: 100%;
+    padding: 15px 0;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    color: #fff;
+}
+
+.input::placeholder {
+    color: #fff;
+}
+@media (max-width: 720px) {
+    .sidebar {
+        display: none;
+    }
+    .main {
+        width: 100%;
+    }
+    .header, .section, .footer, .element {
+        border: none;
+    }
+    .element {
+        width: 250px;
+    }
+}
+@media (max-width: 568px) {
+    .element {
+            width: 200px;
+        }
+}
